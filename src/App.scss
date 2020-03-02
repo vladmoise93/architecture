@@ -19,12 +19,17 @@ code {
 	}
 }
 
-section {
-	height: 100vh;
+.App {
+	width: 100%;
+	section {
+		height: 100vh;
+	}
 }
 
 section:nth-child(1) {
-	background-image: url('./assets/1.jpg');
+	background: url('./assets/1.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 	color: white;
 	.intro {
 		cursor: default;
@@ -56,6 +61,7 @@ section:nth-child(2) {
 		h1 {
 			font-size: 35px;
 			width: 400px;
+			opacity: 0;
 			span {
 				background: #2c2c2c;
 				color: #d9f05c;
@@ -68,8 +74,12 @@ section:nth-child(2) {
 			p {
 				color: rgb(119, 119, 119);
 				padding-top: 20px;
+				opacity: 0;
+				line-height: 25px;
 			}
 			button {
+				opacity: 0;
+				margin-top: 80px;
 				font-size: 20px;
 				font-weight: 600;
 			}
@@ -86,6 +96,9 @@ section:nth-child(3) {
 		padding: 100px 0 60px 0;
 		text-align: center;
 		letter-spacing: 2px;
+		h1 {
+			opacity: 0;
+		}
 		.color {
 			color: #bdd631;
 		}
@@ -93,6 +106,7 @@ section:nth-child(3) {
 			border-bottom: 1px solid #bdd631;
 		}
 		p {
+			opacity: 0;
 			margin: 60px 40px;
 			text-align: left;
 		}
@@ -110,6 +124,7 @@ section:nth-child(3) {
 			overflow: hidden;
 			position: relative;
 			margin: 10px;
+			opacity: 0;
 			img {
 				border-radius: 50%;
 				padding: 5%;
@@ -152,6 +167,7 @@ section:nth-child(4) {
 		padding: 15% 15% 5%;
 		margin: 0 auto;
 		h1 {
+			opacity: 0;
 			font-size: 35px;
 			width: 500px;
 			span {
@@ -164,10 +180,12 @@ section:nth-child(4) {
 			width: 500px;
 			margin-left: 100px;
 			p {
+				opacity: 0;
 				color: rgb(119, 119, 119);
 				padding-top: 20px;
 			}
 			button {
+				opacity: 0;
 				font-size: 20px;
 				font-weight: 600;
 			}
@@ -182,6 +200,7 @@ section:nth-child(4) {
 		.container2 {
 			margin: 100px;
 			position: relative;
+			opacity: 0;
 			img {
 				padding: 5%;
 			}
@@ -221,6 +240,7 @@ section:nth-child(5) {
 		width: 50%;
 		padding: 100px 0px;
 		h1 {
+			opacity: 0;
 			font-size: 30px;
 			span {
 				background: #d9f05c;
@@ -236,11 +256,14 @@ section:nth-child(5) {
 		justify-content: flex-start;
 		margin: 50px auto;
 		padding-left: 100px;
-		h3 {
-			margin: 40px;
-			width: 200px;
-			font-weight: 400;
-			background: white;
+		.gifs {
+			opacity: 0;
+			h3 {
+				margin: 40px;
+				width: 200px;
+				font-weight: 400;
+				background: white;
+			}
 		}
 	}
 }
@@ -261,4 +284,11 @@ section:nth-child(6) {
 	button {
 		margin-top: 50px;
 	}
+}
+
+h1,
+h2,
+h3,
+p {
+	cursor: default;
 }

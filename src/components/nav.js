@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/nav.css';
+import '../styles/nav.scss';
 import logo from '../assets/logo.png';
 
 export default function Nav() {
@@ -8,17 +8,14 @@ export default function Nav() {
 		<div className="nav">
 			<ul>
 				<li className="logo">
-					<Link to="/" />
-					<img src={logo} alt="a" />
-					Arhitecture Agency
+					<Link to="/">
+						<img src={logo} alt="logo" />
+						Arhitecture Agency
+					</Link>
 				</li>
-				<li className="logo">
+				<li>
 					<Link to="">About</Link>
-				</li>
-				<li className="logo">
 					<Link to="">Projects</Link>
-				</li>
-				<li className="contact">
 					<Link to="">
 						<button>Contact Us</button>
 					</Link>
