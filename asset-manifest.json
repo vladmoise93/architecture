@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/architecture/static/css/main.4fbe7530.chunk.css",
-    "main.js": "/architecture/static/js/main.5e91c3f0.chunk.js",
-    "main.js.map": "/architecture/static/js/main.5e91c3f0.chunk.js.map",
+    "main.css": "/architecture/static/css/main.0748c1cd.chunk.css",
+    "main.js": "/architecture/static/js/main.1bee2496.chunk.js",
+    "main.js.map": "/architecture/static/js/main.1bee2496.chunk.js.map",
     "runtime-main.js": "/architecture/static/js/runtime-main.014f7e10.js",
     "runtime-main.js.map": "/architecture/static/js/runtime-main.014f7e10.js.map",
     "static/js/2.83124a78.chunk.js": "/architecture/static/js/2.83124a78.chunk.js",
     "static/js/2.83124a78.chunk.js.map": "/architecture/static/js/2.83124a78.chunk.js.map",
     "index.html": "/architecture/index.html",
-    "precache-manifest.9a9ce7433745bf326821ce0cac5981ae.js": "/architecture/precache-manifest.9a9ce7433745bf326821ce0cac5981ae.js",
+    "precache-manifest.91967e5edd9b1dfe3ab414847eca2aac.js": "/architecture/precache-manifest.91967e5edd9b1dfe3ab414847eca2aac.js",
     "service-worker.js": "/architecture/service-worker.js",
-    "static/css/main.4fbe7530.chunk.css.map": "/architecture/static/css/main.4fbe7530.chunk.css.map",
+    "static/css/main.0748c1cd.chunk.css.map": "/architecture/static/css/main.0748c1cd.chunk.css.map",
     "static/js/2.83124a78.chunk.js.LICENSE.txt": "/architecture/static/js/2.83124a78.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/architecture/static/media/Contact-Hero-Banner.7b89e66f.jpg",
     "static/media/1.gif": "/architecture/static/media/1.bbbfae20.gif",
@@ -33,7 +33,7 @@
   "entrypoints": [
     "static/js/runtime-main.014f7e10.js",
     "static/js/2.83124a78.chunk.js",
-    "static/css/main.4fbe7530.chunk.css",
-    "static/js/main.5e91c3f0.chunk.js"
+    "static/css/main.0748c1cd.chunk.css",
+    "static/js/main.1bee2496.chunk.js"
   ]
 }
