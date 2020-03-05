@@ -3,6 +3,7 @@
 	background: rgba(0, 0, 0, 0.1);
 	padding-top: 20px;
 	letter-spacing: 2px;
+	position: absolute;
 }
 ul {
 	text-transform: uppercase;
@@ -62,5 +63,11 @@ button {
 	margin: 0 40px;
 	@media (max-width: 1000px) {
 		width: 60px;
+	}
+}
+
+.links {
+	@media (max-width: 1000px) {
+		display: none;
 	}
 }
