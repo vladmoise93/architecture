@@ -1,58 +1,66 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useIntersection } from 'react-use';
-import Nav from '../components/nav';
+import React, { useEffect, useState } from 'react';
 import gsap from 'gsap';
+import '../styles/home.scss';
+import { Link } from 'react-router-dom';
 
 function Home() {
-	const [ section2Flag, setSection2Flag ] = useState(false);
-	const [ section3Flag, setSection3Flag ] = useState(false);
-	const [ section4Flag, setSection4Flag ] = useState(false);
-	const [ section5Flag, setSection5Flag ] = useState(false);
+	const [ counter, setCounter ] = useState(0);
 
-	const section2Ref = useRef(null);
-	const section3Ref = useRef(null);
-	const section4Ref = useRef(null);
-	const section5Ref = useRef(null);
-
-	const intersection2 = useIntersection(section2Ref, {
-		root: null,
-		rootMargin: '200px',
-		threshold: 0.9
-	});
-	const intersection3 = useIntersection(section3Ref, {
-		root: null,
-		rootMargin: '95%',
-		threshold: 0.6
-	});
-	const intersection4 = useIntersection(section4Ref, {
-		root: null,
-		rootMargin: '600px',
-		threshold: 0.9
-	});
-	const intersection5 = useIntersection(section5Ref, {
-		root: null,
-		rootMargin: '50%',
-		threshold: 0.9
-	});
-
-	if (!section2Flag) {
-		if (intersection2 && intersection2.intersectionRatio > 0.9) section2();
-	}
-	if (!section3Flag) {
-		if (intersection3 && intersection3.intersectionRatio > 0.6) section3();
-	}
-	if (!section4Flag) {
-		if (intersection4 && intersection4.intersectionRatio > 0.9) section4();
-	}
-	if (!section5Flag) {
-		if (intersection5 && intersection5.intersectionRatio > 0.9) section5();
-	}
-
+	// Top animations on first load
 	useEffect(() => {
 		gsap.fromTo('.section1 h1', 1, { opacity: 0, x: -60 }, { opacity: 1, x: 0 });
+		gsap.fromTo('.section1', 1, { backgroundPosition: '0 0%' }, { opacity: 1, backgroundPosition: '0 55%' });
 		gsap.fromTo('.section1 span', 2, { opacity: 0, x: -60 }, { delay: 1, opacity: 1, x: 0 });
 		gsap.fromTo('.section1 h2', 1, { opacity: 0, y: 60 }, { opacity: 1, y: 0 });
 	}, []);
+
+	// Intersection observer for animations on scroll
+	useEffect(() => {
+		const sections = document.querySelectorAll('section');
+
+		const options = { root: null, threshold: 0.99, rootMargin: '-150px' };
+
+		const observer = new IntersectionObserver((entries, observer) => {
+			entries.forEach((entry) => {
+				if (!entry.isIntersecting) {
+					return;
+				}
+				if (entry.target.className === 'section2') section2();
+				if (entry.target.className === 'section3') section3();
+				if (entry.target.className === 'section4') section4();
+				if (entry.target.className === 'section5') section5();
+				observer.unobserve(entry.target);
+			}, options);
+		});
+		sections.forEach((section) => {
+			observer.observe(section);
+		});
+	}, []);
+
+	// Image swap animations on button click
+	useEffect(
+		() => {
+			let element = document.querySelector('.flexImagesSec4');
+			const currentElement = element.children[counter];
+			const currentElementSize = currentElement.clientWidth;
+
+			if (counter < element.length - 1) {
+				gsap.to(element, 1, {
+					x: -currentElementSize * counter,
+					duration: 1.5,
+					ease: 'elastic.inOut(1, 1)'
+				});
+			}
+			if (counter >= 0) {
+				gsap.to(element, 1, {
+					x: -currentElementSize * counter,
+					duration: 1.5,
+					ease: 'elastic.inOut(1, 1)'
+				});
+			}
+		},
+		[ counter ]
+	);
 
 	const imageDescSec3 = [
 		'Studio Units',
@@ -81,7 +89,7 @@ function Home() {
 	];
 	const section4ImageCase = [ 1, 2, 3 ].map((image, index) => {
 		return (
-			<div key={image}>
+			<div key={image} className="imageSec4">
 				<img src={require(`../assets/2_${image}.png`)} alt="" />
 				<h1>{imageDescSec4[index]}</h1>
 				<h2>{imageDescSec4[index + 2]}</h2>
@@ -119,7 +127,7 @@ function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="section2" ref={section2Ref}>
+			<section className="section2">
 				<div className="flex">
 					<div>
 						<h1>
@@ -128,7 +136,7 @@ function Home() {
 					</div>
 					<div>
 						<p>
-							At Greenway Development Group, we facilitate every resource it takes to plan and create
+							At our Development Group, we facilitate every resource it takes to plan and create
 							high-quality developments, from site selection to design and construction to
 							happily-ever-after property management. Over the past five years, we’ve completed over $50
 							million in development projects for communities across multiple states.
@@ -139,11 +147,19 @@ function Home() {
 							those solutions are? By listening. By getting to know what communities need. By being a
 							trusted partner.
 						</p>
-						<button className="lm">Learn More</button>
+						<Link
+							to="/about"
+							onClick={() =>
+								window.scroll({
+									top: 0
+								})}
+						>
+							<button className="lm">Learn More</button>
+						</Link>
 					</div>
 				</div>
 			</section>
-			<section className="section3" ref={section3Ref}>
+			<section className="section3">
 				<div className="flex">
 					<div>
 						<h1>
@@ -160,7 +176,7 @@ function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="section4" ref={section4Ref}>
+			<section className="section4">
 				<div className="flex">
 					<div className="content">
 						<h1>
@@ -172,20 +188,40 @@ function Home() {
 							<span>100% pre-leased before completion, jump-started neighborhood revivals</span>, and{' '}
 							<span>expanded campus communities.</span>
 						</p>
-						<button>SEE PROJECTS</button>
+						<Link
+							to="/projects"
+							onClick={() =>
+								window.scroll({
+									top: 0
+								})}
+						>
+							<button>SEE PROJECTS</button>
+						</Link>
 					</div>
-					<div className="flexImages">{section4ImageCase}</div>
+					<div className="buttonLR">
+						<button
+							className="buttonL"
+							onClick={() => (counter > 0 ? setCounter(counter - 1) : setCounter(0))}
+						>
+							{'<'}
+						</button>
+						<button
+							className="buttonR"
+							onClick={() => (counter < 2 ? setCounter(counter + 1) : setCounter(2))}
+						>
+							{'>'}
+						</button>
+					</div>
+					<div className="flexImagesSec4">{section4ImageCase}</div>
 				</div>
 			</section>
-			<section className="section5" ref={section5Ref}>
+			<section className="section5">
 				<div>
 					<div className="flex">
-						<div>
-							<h1>
-								We're passionate about planning, building, and managing developments{' '}
-								<span>with long-term value.</span>
-							</h1>
-						</div>
+						<h1>
+							We're passionate about planning, building, and managing developments{' '}
+							<span>with long-term value.</span>
+						</h1>
 						<div className="flexImages">{section5ImageCase}</div>
 					</div>
 				</div>
@@ -196,7 +232,15 @@ function Home() {
 						Take the first step toward a development that ignites limitless potential in your community. Get
 						in touch.
 					</h1>
-					<button>Contact us</button>
+					<Link
+						to="/contact"
+						onClick={() =>
+							window.scroll({
+								top: 0
+							})}
+					>
+						<button>Contact us</button>
+					</Link>
 				</div>
 			</section>
 		</div>
@@ -216,7 +260,6 @@ function Home() {
 			{ y: 60 },
 			{ delay: 1, opacity: 1, y: 0, stagger: { amount: 0.8 }, ease: 'power4.out' }
 		);
-		setSection2Flag(true);
 	}
 	function section3() {
 		gsap.fromTo('.section3 h1', 1, { opacity: 0, y: -100 }, { opacity: 1, y: 0 });
@@ -233,20 +276,30 @@ function Home() {
 			{ opacity: 0, x: 200 },
 			{ delay: 0.5, opacity: 1, x: 0, stagger: { amount: 1.5 }, ease: 'power3.inOut' }
 		);
-		setSection3Flag(true);
 	}
 	function section4() {
-		gsap.fromTo('.section4 h1', 1, { opacity: 0, y: -100 }, { opacity: 1, y: 0 });
-		gsap.fromTo('.section4 h2', 1, { opacity: 0, x: 100 }, { opacity: 1, x: 0 });
-		gsap.fromTo('.section4 p', 1, { opacity: 0, x: 400 }, { delay: 0.5, opacity: 1, x: 0 });
-		gsap.fromTo('.section4 button', 1, { opacity: 0, y: 100 }, { delay: 0.5, opacity: 1, y: 0 });
-		gsap.fromTo(
-			'.section4 .images .container2',
-			1,
-			{ opacity: 0, x: 200 },
-			{ delay: 0.5, opacity: 1, x: 0, stagger: { amount: 1.5 }, ease: 'power3.inOut' }
-		);
-		setSection4Flag(true);
+		gsap
+			.timeline()
+			.fromTo('.section4 .content h1', 0.5, { x: -200 }, { opacity: 1, x: 0 })
+			.fromTo('.section4 .content p', 0.5, { x: -200 }, { opacity: 1, x: 0 })
+			.fromTo('.section4 .content button', 0.5, { x: -200 }, { opacity: 1, x: 0 })
+			.fromTo('.section4 .content button', 0.5, { y: 100 }, { opacity: 1, y: 0 });
+		gsap.fromTo('.section4 .buttonL', 0.5, { x: -2000 }, { delay: 2, opacity: 1, x: 0 });
+		gsap.fromTo('.section4 .buttonR', 0.5, { x: 2000 }, { delay: 2, opacity: 1, x: 0 });
+		gsap
+			.timeline()
+			.fromTo(
+				'.section4 .imageSec4',
+				0.5,
+				{ x: 200 },
+				{ delay: 1, opacity: 1, x: 0, stagger: { amount: 1.5 }, ease: 'power3.inOut' }
+			)
+			.fromTo(
+				[ '.section4 .imageSec4 h1', '.section4 .imageSec4 h2', '.section4 .imageSec4 button' ],
+				0.5,
+				{ y: 100 },
+				{ opacity: 1, y: 0, stagger: { amount: 1.5 }, ease: 'power3.inOut' }
+			);
 	}
 
 	function section5() {
@@ -258,7 +311,6 @@ function Home() {
 			{ opacity: 0, y: 100 },
 			{ opacity: 1, y: 0, stagger: { amount: 1.2 }, ease: 'power4.in' }
 		);
-		setSection5Flag(true);
 	}
 }
 

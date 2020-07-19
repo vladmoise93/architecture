@@ -1,0 +1,359 @@
+$green: #bdd631;
+
+.section1_c {
+	background-image: url(../assets/Contact-Hero-Banner.jpg);
+	height: 15rem;
+	padding: 8rem;
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(0, 0, 0, .4);
+		z-index: 0;
+	}
+	h1 {
+		margin: 6rem auto;
+		line-height: 4rem;
+		color: white;
+		opacity: 0;
+		width: 50%;
+		text-align: center;
+		text-shadow: 5px 5px 100px black;
+		font-size: 3rem;
+		span {
+			background: $green;
+			color: #31303d;
+			padding: 0px 5px;
+		}
+	}
+	@media (max-width: 1150px) {
+		padding: 8rem 0rem;
+		h1 {
+			width: 90%;
+			font-size: 2rem;
+			line-height: 3rem;
+		}
+	}
+}
+
+.section2_c {
+	width: 100%;
+	.container {
+		margin: 0 auto;
+		width: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		padding: 2rem;
+		h1 {
+			opacity: 0;
+			flex: 48%;
+			span {
+				background: $green;
+				color: #31303d;
+				padding: 0px 5px;
+			}
+		}
+		form {
+			flex: 52%;
+			padding-top: 40px;
+			padding-left: 2rem;
+			align-items: flex-start;
+			label {
+				opacity: 0;
+				font-size: 25px;
+				letter-spacing: 2px;
+				margin-bottom: 10px;
+			}
+			input,
+			select {
+				letter-spacing: 2px;
+				opacity: 0;
+				border: 2px solid #bdd631;
+				width: 20rem;
+				padding: .8rem .7rem;
+				margin-bottom: 20px;
+				font-family: nobel, sans-serif;
+				&:focus {
+					transition: .5s;
+					border: 2px solid #d9ff00;
+					outline: none;
+				}
+			}
+			input:nth-last-child(1) {
+				width: 1rem;
+				height: 1rem;
+				margin-right: 10px;
+			}
+			textarea {
+				letter-spacing: 2px;
+				border: 2px solid #bdd631;
+				width: 20rem;
+				height: 10rem;
+				padding: .8rem .7rem;
+				resize: vertical;
+				opacity: 0;
+				&:focus {
+					transition: .5s;
+					border: 2px solid #d9ff00;
+					outline: none;
+				}
+			}
+		}
+	}
+	@media (max-width: 1150px) {
+		.container {
+			width: 80%;
+			flex-direction: column;
+			h1 {
+				font-size: 2rem;
+			}
+			div {
+				p {
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+.section3_c {
+	width: 100%;
+	background: #31303d;
+	margin: 3rem 0;
+	.container {
+		color: white;
+		margin: 0 auto;
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 5rem;
+		h1 {
+			opacity: 0;
+			flex: 48%;
+			text-align: center;
+			span {
+				color: $green;
+			}
+		}
+		p {
+			opacity: 0;
+		}
+
+		.center {
+			justify-content: center;
+		}
+		div {
+			display: flex;
+			padding: 20px;
+			margin-top: 3rem;
+			.circle {
+				opacity: 0;
+				margin: auto;
+				border: 2px solid $green;
+				border-radius: 50%;
+				width: 300px;
+				height: 300px;
+				position: relative;
+				img {
+					width: 100%;
+					height: 100%;
+					border-radius: 50%;
+				}
+				h1 {
+					position: absolute;
+					top: 50%;
+					font-size: 2rem;
+					text-align: center;
+					width: 90%;
+					text-shadow: 2px 2px 20px black;
+				}
+			}
+		}
+	}
+	@media (max-width: 1150px) {
+		.container {
+			width: 80%;
+			padding: 2rem 0;
+			h1 {
+				font-size: 2rem;
+			}
+			p {
+				font-size: 1rem;
+				line-height: 1.5rem;
+			}
+			div {
+				width: 60%;
+				margin: 10px auto;
+				padding: 10px;
+				.circle {
+					width: 250px;
+					height: 180px;
+					padding: 10px;
+					margin: 30px;
+					h1 {
+						font-size: 1.2rem;
+					}
+				}
+				@media (max-width: 1024px) {
+					flex-direction: column;
+					align-items: center;
+					margin: 0px auto;
+					padding: 0px;
+
+					.circle {
+						width: 250px;
+						height: 250px;
+						h1 {
+							font-size: 1.4rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.section4_c {
+	width: 100%;
+	.container {
+		width: 50%;
+		margin: 5rem auto;
+		h1 {
+			text-align: center;
+			opacity: 0;
+			letter-spacing: .1rem;
+		}
+		p {
+			opacity: 0;
+			line-height: 30px;
+			letter-spacing: .1rem;
+		}
+		.imageContainer {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			div {
+				margin: 5rem auto 0;
+				width: 33%;
+				opacity: 0;
+				h1 {
+					margin: 40px auto;
+					opacity: 0;
+					font-size: 1.4rem;
+					width: 70%;
+				}
+			}
+			@media (max-width: 1024px) {
+				div {
+					margin: 2rem auto 0;
+				}
+			}
+			@media (max-width: 900px) {
+				div {
+					margin: 2rem auto 0;
+					width: 50%;
+				}
+			}
+			@media (max-width: 400px) {
+				div {
+					width: 100%;
+				}
+			}
+		}
+	}
+	@media (max-width: 600px) {
+		.container {
+			width: 80%;
+		}
+	}
+}
+
+.section5_c {
+	width: 100%;
+	background-image: url(../assets/Plan-Build-Manage-Bottom-CTA-Banner.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	&:before {
+		content: '';
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		background: rgba(0, 0, 0, .4);
+		z-index: 0;
+	}
+	.flex {
+		padding: 3rem;
+		margin: 0 auto;
+		width: 70%;
+		text-align: center;
+		flex-direction: column;
+		align-items: center;
+		color: white;
+
+		button {
+			z-index: 1;
+			text-align: center;
+			opacity: 1;
+			letter-spacing: 2px;
+		}
+		h1 {
+			z-index: 1;
+			opacity: 1;
+		}
+		@media (max-width: 600px) {
+			h1 {
+				font-size: 1.5rem;
+				padding: 2rem 0;
+			}
+		}
+	}
+}
+
+.submitted {
+	background: #374047;
+	width: 33%;
+	position: absolute;
+	left: 33%;
+	z-index: 20;
+	text-align: center;
+	height: 300px;
+	opacity: 0;
+	svg {
+		padding: 50px 0 0 0;
+		fill: white;
+		width: 15%;
+	}
+	h1 {
+		width: 100%;
+		padding: 0;
+		margin: 40px auto;
+		font-size: 25px;
+		line-height: 35px;
+		text-shadow: none;
+		color: white;
+	}
+	.close {
+		position: absolute;
+		top: 10px;
+		right: 20px;
+		color: white;
+		border: 2px solid white;
+		border-radius: 50%;
+		width: 25px;
+		height: 25px;
+		text-align: center;
+		cursor: pointer;
+		opacity: 1;
+		background: none;
+	}
+}

@@ -15,9 +15,9 @@ export default function Nav() {
 						</Link>
 					</li>
 					<li className="links">
-						<Link to="">About</Link>
-						<Link to="">Projects</Link>
-						<Link to="">
+						<Link to="/about">About</Link>
+						<Link to="/projects">Projects</Link>
+						<Link to="/contact">
 							<button>Contact Us</button>
 						</Link>
 					</li>
