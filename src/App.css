@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body ::-moz-selection {
+  background-color: #bdd631;
+}
+
+body ::selection {
+  background-color: #bdd631;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  opacity: 0;
+  cursor: default;
+  letter-spacing: .1rem;
+}
+
+button {
+  opacity: 0;
+}
+
+.nav button {
+  opacity: 1;
+}
+/*# sourceMappingURL=App.css.map */

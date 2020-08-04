@@ -1,0 +1,321 @@
+.section1_a {
+  background-image: url(../assets/Standard-Hero-Banner.jpg);
+  height: 15rem;
+  padding: 8rem;
+}
+
+.section1_a h1 {
+  margin: 6rem auto;
+  line-height: 4rem;
+  color: white;
+  opacity: 0;
+  width: 50%;
+  text-align: center;
+  text-shadow: 5px 5px 100px black;
+  font-size: 3rem;
+}
+
+.section1_a h1 span {
+  background: #bdd631;
+  color: #31303d;
+  padding: 0px 5px;
+}
+
+@media (max-width: 1150px) {
+  .section1_a {
+    padding: 8rem 0rem;
+  }
+  .section1_a h1 {
+    width: 90%;
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+}
+
+.section2_a,
+.section6_a {
+  width: 100%;
+}
+
+.section2_a .container,
+.section6_a .container {
+  margin: 0 auto;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 2rem;
+}
+
+.section2_a .container h1,
+.section6_a .container h1 {
+  opacity: 0;
+  -webkit-box-flex: 48%;
+      -ms-flex: 48%;
+          flex: 48%;
+}
+
+.section2_a .container h1 span,
+.section6_a .container h1 span {
+  background: #bdd631;
+  color: #31303d;
+  padding: 0px 5px;
+}
+
+.section2_a .container div,
+.section6_a .container div {
+  -webkit-box-flex: 52%;
+      -ms-flex: 52%;
+          flex: 52%;
+}
+
+.section2_a .container div p,
+.section6_a .container div p {
+  padding: 2rem 2rem 0 2rem;
+  opacity: 0;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1150px) {
+  .section2_a .container,
+  .section6_a .container {
+    width: 80%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .section2_a .container h1,
+  .section6_a .container h1 {
+    font-size: 2rem;
+  }
+  .section2_a .container div p,
+  .section6_a .container div p {
+    padding: 0;
+  }
+}
+
+.section3_a,
+.section5_a {
+  width: 100%;
+  background: #31303d;
+  margin: 3rem 0;
+}
+
+.section3_a .container,
+.section5_a .container {
+  color: white;
+  margin: 0 auto;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5rem;
+}
+
+.section3_a .container h1,
+.section5_a .container h1 {
+  opacity: 0;
+  -webkit-box-flex: 48%;
+      -ms-flex: 48%;
+          flex: 48%;
+  text-align: center;
+}
+
+.section3_a .container h1 span,
+.section5_a .container h1 span {
+  color: #bdd631;
+}
+
+.section3_a .container p,
+.section5_a .container p {
+  opacity: 0;
+}
+
+.section3_a .container .center,
+.section5_a .container .center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section3_a .container div,
+.section5_a .container div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  margin-top: 3rem;
+}
+
+.section3_a .container div .circle,
+.section5_a .container div .circle {
+  opacity: 0;
+  margin: auto;
+  border: 2px solid #bdd631;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+
+.section3_a .container div .circle img,
+.section5_a .container div .circle img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.section3_a .container div .circle h1,
+.section5_a .container div .circle h1 {
+  position: absolute;
+  top: 50%;
+  font-size: 2rem;
+  text-align: center;
+  width: 90%;
+  text-shadow: 2px 2px 20px black;
+}
+
+@media (max-width: 1150px) {
+  .section3_a .container,
+  .section5_a .container {
+    width: 80%;
+    padding: 2rem 0;
+  }
+  .section3_a .container h1,
+  .section5_a .container h1 {
+    font-size: 2rem;
+  }
+  .section3_a .container p,
+  .section5_a .container p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .section3_a .container div,
+  .section5_a .container div {
+    width: 60%;
+    margin: 10px auto;
+    padding: 10px;
+  }
+  .section3_a .container div .circle,
+  .section5_a .container div .circle {
+    width: 250px;
+    height: 180px;
+    padding: 10px;
+    margin: 30px;
+  }
+  .section3_a .container div .circle h1,
+  .section5_a .container div .circle h1 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 1150px) and (max-width: 1024px) {
+  .section3_a .container div,
+  .section5_a .container div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0px auto;
+    padding: 0px;
+  }
+  .section3_a .container div .circle,
+  .section5_a .container div .circle {
+    width: 250px;
+    height: 250px;
+  }
+  .section3_a .container div .circle h1,
+  .section5_a .container div .circle h1 {
+    font-size: 1.4rem;
+  }
+}
+
+.section4_a {
+  width: 100%;
+}
+
+.section4_a .container {
+  width: 50%;
+  margin: 5rem auto;
+}
+
+.section4_a .container h1 {
+  text-align: center;
+  opacity: 0;
+}
+
+.section4_a .container p {
+  opacity: 0;
+}
+
+.section4_a .container .imageContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.section4_a .container .imageContainer div {
+  margin: 5rem auto 0;
+  width: 33%;
+  opacity: 0;
+}
+
+.section4_a .container .imageContainer div h1 {
+  margin: 40px auto;
+  opacity: 0;
+  font-size: 1.4rem;
+  width: 70%;
+}
+
+@media (max-width: 1024px) {
+  .section4_a .container .imageContainer div {
+    margin: 2rem auto 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .section4_a .container .imageContainer div {
+    margin: 2rem auto 0;
+    width: 50%;
+  }
+}
+
+@media (max-width: 400px) {
+  .section4_a .container .imageContainer div {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .section4_a .container {
+    width: 80%;
+  }
+}
+/*# sourceMappingURL=about.css.map */

@@ -1,0 +1,103 @@
+.nav {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  padding-top: 20px;
+  letter-spacing: 2px;
+  position: absolute;
+  z-index: 1;
+}
+
+ul {
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  margin: 10px;
+}
+
+li:nth-child(1) a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 1000px) {
+  li:nth-child(1) a {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  margin: 15px;
+}
+
+button {
+  color: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+  font-size: inherit;
+  font-weight: inherit;
+  border-radius: 20px;
+  background: #bdd631;
+  height: 50px;
+  letter-spacing: inherit;
+  width: 180px;
+}
+
+.logo img {
+  width: 15%;
+  margin: 0 40px;
+}
+
+@media (max-width: 1000px) {
+  .logo img {
+    width: 60px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .links {
+    display: none;
+  }
+}
+/*# sourceMappingURL=nav.css.map */
